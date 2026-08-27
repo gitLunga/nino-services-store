@@ -11,6 +11,8 @@ interface CartItem {
   quantity?: number
   category?: string
   subcategory?: string
+  selectedColor?: string
+  selectedSize?: string
 }
 
 interface CartStore {

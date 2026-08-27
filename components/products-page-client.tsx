@@ -78,11 +78,12 @@ export default function ProductsPageClient({ products }: ProductsPageClientProps
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4 font-playfair">All Products</h1>
+          <span className="section-eyebrow mb-4">Full Collection</span>
+          <h1 className="text-4xl font-bold text-gray-800 mt-3 mb-4 font-playfair">All Products</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Discover our complete collection of beautiful products
           </p>
-          <div className="w-32 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto rounded-full mt-6"></div>
+          <div className="divider-brand mt-6" />
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-8">
@@ -338,7 +339,7 @@ export default function ProductsPageClient({ products }: ProductsPageClientProps
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
                               <Button
                                 onClick={() => handleAddToCart(product)}
-                                className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full relative overflow-hidden"
+                                className="w-full btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full relative overflow-hidden"
                               >
                                 <ShoppingBag className="w-4 h-4 mr-2" />
                                 Add to Cart
@@ -382,7 +383,7 @@ export default function ProductsPageClient({ products }: ProductsPageClientProps
                     setSearchTerm("")
                     setSelectedCategory("All")
                   }}
-                  className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
+                  className="btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
                 >
                   Clear Filters
                 </Button>

@@ -54,16 +54,17 @@ export default function CategoryPage({ category }: CategoryPageProps) {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <span className="section-eyebrow mb-4">Collection</span>
+          <div className="flex items-center justify-center gap-4 mt-3 mb-4">
             <div
-              className={`w-16 h-16 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center text-3xl shadow-lg`}
+              className={`w-16 h-16 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center text-3xl shadow-elegant`}
             >
               {category.icon}
             </div>
             <h1 className="text-4xl font-bold text-gray-800 font-playfair">{category.name}</h1>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">{category.description}</p>
-          <div className="w-32 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto rounded-full mt-6"></div>
+          <div className="divider-brand mt-6" />
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-8">
@@ -283,7 +284,7 @@ export default function CategoryPage({ category }: CategoryPageProps) {
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex-1">
                               <Button
                                 onClick={() => handleAddToCart(item)}
-                                className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full relative overflow-hidden"
+                                className="w-full btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full relative overflow-hidden"
                               >
                                 <ShoppingBag className="w-4 h-4 mr-2" />
                                 Add to Cart
@@ -324,7 +325,7 @@ export default function CategoryPage({ category }: CategoryPageProps) {
                 <p className="text-gray-500 mb-6">Try adjusting your filters or browse other categories</p>
                 <Button
                   onClick={() => setSelectedSubcategory("All")}
-                  className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
+                  className="btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
                 >
                   Show All Products
                 </Button>

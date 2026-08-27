@@ -46,9 +46,10 @@ Sent from Nino Services website contact form.`
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-800 mb-6 font-playfair">Get in Touch</h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto rounded-full mb-8"></div>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <span className="section-eyebrow mb-4">We'd Love to Hear From You</span>
+          <h1 className="text-5xl font-bold text-gray-800 mt-3 mb-6 font-playfair">Get in Touch</h1>
+          <div className="divider-brand mb-8" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Have questions about our products? Need styling advice? Or just want to say hello? I'd love to hear from
             you! 💕
@@ -219,7 +220,7 @@ Sent from Nino Services website contact form.`
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full py-3"
+                  className="w-full btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full py-3"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Send via WhatsApp

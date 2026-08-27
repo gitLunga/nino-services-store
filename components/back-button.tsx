@@ -64,7 +64,7 @@ export default function BackButton({ customPath, label }: BackButtonProps) {
       >
         <Button
           onClick={handleBack}
-          className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-white/20"
+          className="btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-white/20"
           size="sm"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />

@@ -17,10 +17,14 @@ export default function HomePage() {
       <HeroCarousel />
 
       {/* Welcome Section */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6 font-playfair">Welcome to Nino Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <span className="section-eyebrow mb-4">Nino Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mt-3 mb-6 font-playfair">
+            Welcome to Nino Services
+          </h2>
+          <div className="divider-brand mb-6" />
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Your one-stop destination for beautiful fashion, accessories, and lifestyle products. We curate the finest
             items to help you express your unique style and personality.
           </p>
@@ -28,17 +32,25 @@ export default function HomePage() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-16 px-4 bg-white/50">
+      <section className="py-20 px-4 bg-white/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center font-playfair">Shop by Category</h2>
+          <div className="text-center mb-14">
+            <span className="section-eyebrow mb-4">Explore</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-3 font-playfair">Shop by Category</h2>
+            <div className="divider-brand" />
+          </div>
           <CategoryShowcase categories={categoriesData} />
         </div>
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center font-playfair">Featured Products</h2>
+          <div className="text-center mb-14">
+            <span className="section-eyebrow mb-4">Trending Now</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-3 font-playfair">Featured Products</h2>
+            <div className="divider-brand" />
+          </div>
           <ProductSwiper products={featuredProducts} />
         </div>
       </section>
