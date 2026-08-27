@@ -123,45 +123,66 @@ export default function HeroCarousel() {
           }`}
         >
           {/* Background Image */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 overflow-hidden">
             <Image
               src={slide.image || "/placeholder.svg"}
               alt={slide.title}
               fill
-              className="object-cover"
+              className={`object-cover ${index === currentSlide ? "animate-kenburns" : ""}`}
               priority={index === 0}
             />
             {/* Overlay for better text readability */}
             <div
-              className={`absolute inset-0 bg-gradient-to-r ${slide.gradient} ${slide.image.includes("nino-store-welcome") ? "opacity-20" : "opacity-60"}`}
+              className={`absolute inset-0 bg-gradient-to-r ${slide.gradient} ${slide.image.includes("nino-store-welcome") ? "opacity-20" : "opacity-55"}`}
             />
+            {slide.textColor === "text-white" && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+            )}
           </div>
 
           {/* Content */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className={`text-center max-w-4xl px-4 ${slide.textColor}`}>
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6" />
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair">{slide.title}</h1>
-                <Sparkles className="w-6 h-6" />
+              <div
+                className={`flex items-center justify-center gap-2 mb-3 transition-all duration-700 delay-100 ${
+                  index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+              >
+                <span className="section-eyebrow text-white/90">{slide.subtitle}</span>
               </div>
 
-              <h2 className="text-xl md:text-2xl lg:text-3xl mb-4 font-light">{slide.subtitle}</h2>
+              <h1
+                className={`flex items-center justify-center gap-3 text-4xl md:text-6xl lg:text-7xl font-bold font-playfair mb-4 transition-all duration-700 delay-150 drop-shadow-sm ${
+                  index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+              >
+                <Sparkles className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+                {slide.title}
+                <Sparkles className="w-6 h-6 md:w-8 md:h-8 shrink-0" />
+              </h1>
 
-              <p className="text-base md:text-lg lg:text-xl mb-8 max-w-2xl mx-auto opacity-90 leading-relaxed">
+              <p
+                className={`text-base md:text-lg lg:text-xl mb-8 max-w-2xl mx-auto opacity-90 leading-relaxed transition-all duration-700 delay-200 ${
+                  index === currentSlide ? "opacity-90 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+              >
                 {slide.description}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div
+                className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-700 delay-300 ${
+                  index === currentSlide ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+              >
                 <Button
                   size="lg"
                   onClick={() => handleCTAClick(slide.ctaAction)}
-                  className={`${
+                  className={`btn-shine ${
                     slide.ctaAction === "whatsapp"
                       ? "bg-green-500 hover:bg-green-600"
                       : "bg-white text-gray-800 hover:bg-gray-100"
-                  } rounded-full px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105`}
+                  } rounded-full px-8 py-3 text-lg font-semibold shadow-elegant hover:shadow-elegant-lg transition-all duration-300 hover:scale-105`}
                 >
                   {slide.ctaAction === "whatsapp" ? (
                     <MessageCircle className="w-5 h-5 mr-2" />
@@ -179,7 +200,7 @@ export default function HeroCarousel() {
                     size="lg"
                     variant="outline"
                     onClick={() => handleCTAClick("browse")}
-                    className="bg-white/10 border-white/30 text-gray-800 hover:bg-white/20 rounded-full px-8 py-3 text-lg font-semibold backdrop-blur-sm"
+                    className="bg-white/10 border-white/30 text-gray-800 hover:bg-white/20 rounded-full px-8 py-3 text-lg font-semibold backdrop-blur-sm hover:scale-105"
                   >
                     <ShoppingBag className="w-5 h-5 mr-2" />
                     Browse Online Store
@@ -203,7 +224,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/30 text-white rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110"
         onClick={prevSlide}
       >
         <ChevronLeft className="w-6 h-6" />
@@ -211,7 +232,7 @@ export default function HeroCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full backdrop-blur-sm"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/30 text-white rounded-full backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110"
         onClick={nextSlide}
       >
         <ChevronRight className="w-6 h-6" />
@@ -222,8 +243,9 @@ export default function HeroCarousel() {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? "bg-white w-8" : "bg-white/50 hover:bg-white/70"
+            aria-label={`Go to slide ${index + 1}`}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              index === currentSlide ? "bg-white w-8 shadow-md" : "bg-white/50 w-2.5 hover:bg-white/70"
             }`}
             onClick={() => setCurrentSlide(index)}
           />
@@ -232,7 +254,7 @@ export default function HeroCarousel() {
 
       {/* Slide Counter - Only show on client */}
       {isClient && (
-        <div className="absolute top-6 right-6 bg-black/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm">
+        <div className="absolute top-6 right-6 bg-black/20 backdrop-blur-md border border-white/10 rounded-full px-3 py-1 text-white text-sm font-medium tabular-nums">
           {currentSlide + 1} / {slides.length}
         </div>
       )}

@@ -153,7 +153,7 @@ export default function SmartRecommendations({ products }: SmartRecommendationsP
                       <Button
                         size="sm"
                         onClick={() => handleAddToCart(product)}
-                        className="flex-1 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
+                        className="flex-1 btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
                       >
                         <ShoppingBag className="w-3 h-3 mr-1" />
                         Add to Cart
@@ -176,7 +176,7 @@ export default function SmartRecommendations({ products }: SmartRecommendationsP
 
         <div className="text-center mt-8">
           <Link href="/products">
-            <Button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full px-8 py-3">
+            <Button className="btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full px-8 py-3">
               View All Products
             </Button>
           </Link>

@@ -10,9 +10,10 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50">
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-800 mb-6 font-playfair">About Nino Services</h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto rounded-full mb-8"></div>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <span className="section-eyebrow mb-4">Our Story</span>
+          <h1 className="text-5xl font-bold text-gray-800 mt-3 mb-6 font-playfair">About Nino Services</h1>
+          <div className="divider-brand mb-8" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Where passion meets fashion, and every piece tells a story of elegance, beauty, and feminine empowerment.
           </p>
@@ -104,7 +105,7 @@ export default function AboutPage() {
 
         {/* Values Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <Card className="text-center bg-white/80 backdrop-blur-sm border-pink-100 hover:shadow-xl transition-all duration-300">
+          <Card className="text-center bg-white/80 backdrop-blur-sm border-pink-100 hover-lift">
             <CardContent className="p-8">
               <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="w-8 h-8 text-white" />
@@ -116,7 +117,7 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <Card className="text-center bg-white/80 backdrop-blur-sm border-pink-100 hover:shadow-xl transition-all duration-300">
+          <Card className="text-center bg-white/80 backdrop-blur-sm border-pink-100 hover-lift">
             <CardContent className="p-8">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <GraduationCap className="w-8 h-8 text-white" />
@@ -128,7 +129,7 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <Card className="text-center bg-white/80 backdrop-blur-sm border-pink-100 hover:shadow-xl transition-all duration-300">
+          <Card className="text-center bg-white/80 backdrop-blur-sm border-pink-100 hover-lift">
             <CardContent className="p-8">
               <div className="w-16 h-16 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="w-8 h-8 text-white" />

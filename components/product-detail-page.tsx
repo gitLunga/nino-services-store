@@ -245,7 +245,7 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
                   ref={addToCartButtonRef}
                   size="lg"
                   onClick={handleAddToCart}
-                  className="flex-1 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
+                  className="flex-1 btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
                 >
                   <ShoppingBag className="w-5 h-5 mr-2" />
                   Add to Cart

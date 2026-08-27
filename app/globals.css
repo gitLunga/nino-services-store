@@ -10,20 +10,20 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 336 74% 47%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
+    --secondary: 330 100% 97%;
+    --secondary-foreground: 336 60% 24%;
+    --muted: 220 20% 96%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 330 100% 97%;
+    --accent-foreground: 336 60% 24%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --border: 330 40% 92%;
+    --input: 330 40% 90%;
+    --ring: 336 74% 47%;
+    --radius: 0.75rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -72,8 +72,17 @@
   font-family: var(--font-playfair);
 }
 
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
 .font-lora {
   font-family: var(--font-lora);
+}
+
+::selection {
+  background-color: rgba(236, 72, 153, 0.25);
+  color: #831843;
 }
 
 /* Custom animations */
@@ -115,6 +124,171 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #db2777, #7c3aed);
+}
+
+/* ---------------------------------------------------------- */
+/* Premium UI system: reveal motion, hovers, shine, dividers   */
+/* ---------------------------------------------------------- */
+
+/* Elegant gradient text (upgraded brand gradient) */
+.text-gradient-brand {
+  background: linear-gradient(135deg, #db2777, #9333ea 55%, #db2777);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-brand-gradient {
+  background-image: linear-gradient(135deg, #ec4899, #a855f7);
+}
+
+/* Section eyebrow label, used above section headings */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-cormorant);
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #db2777;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #db2777);
+}
+.section-eyebrow::after {
+  background: linear-gradient(90deg, #db2777, transparent);
+}
+
+/* Elegant divider accent */
+.divider-brand {
+  width: 6rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  margin: 1.25rem auto 0;
+}
+
+/* Card hover lift with soft shadow */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -18px rgba(190, 24, 93, 0.28);
+}
+
+/* Nav link underline-grow hover */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ec4899, #a855f7);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link[data-active="true"]::after {
+  width: 100%;
+}
+
+/* Shine sweep for premium buttons */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.btn-shine:hover::before {
+  transform: translateX(120%);
+}
+
+/* Scroll-reveal fallback for non-JS driven reveals */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.reveal-up {
+  animation: revealUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Ken Burns background zoom for hero imagery */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+.animate-kenburns {
+  animation: kenburns 8s ease-out forwards;
+}
+
+/* Shimmer skeleton / accent sweep */
+@keyframes shimmerSweep {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #db2777 0%, #f472b6 25%, #db2777 50%, #f472b6 75%, #db2777 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerSweep 4s linear infinite;
+}
+
+/* Marquee for announcement bar */
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marqueeScroll 24s linear infinite;
+}
+
+/* Glass surface utility */
+.glass-surface {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 /* Glow Mode Styles */

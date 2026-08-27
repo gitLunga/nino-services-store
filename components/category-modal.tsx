@@ -165,7 +165,7 @@ export default function CategoryModal({ categoryId, onClose, categories }: Categ
                         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                           <Button
                             size="sm"
-                            className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
+                            className="btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
                           >
                             <ShoppingBag className="w-3 h-3 mr-1" />
                             Add
@@ -189,7 +189,7 @@ export default function CategoryModal({ categoryId, onClose, categories }: Categ
               </p>
             </div>
             <Link href={`/category/${category.id}`}>
-              <Button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full">
+              <Button className="btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full">
                 View All Products
               </Button>
             </Link>

@@ -141,7 +141,7 @@ export default function CartSidebar() {
                   <div className="space-y-3 w-full">
                     <Button
                       onClick={toggleCart}
-                      className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
+                      className="w-full btn-shine bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white rounded-full"
                     >
                       Browse New Arrivals
                     </Button>
